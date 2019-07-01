@@ -19,7 +19,8 @@ namespace WishList.Controllers
 
         public IActionResult Index()
         {
-            return View("Index", _context.Items);
+            var itemsList = _context.Items.ToList<Item>();
+            return View("Index", itemsList);
         }
 
         [HttpPost]
